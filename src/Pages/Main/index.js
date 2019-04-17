@@ -14,13 +14,16 @@ export default class Main extends Component {
 
   handleSubmit = async (e) =>{
     e.preventDefault();
-   
+    
     const response =  await api.post('boxes', {
       title: this.state.newBox,
-    });
+    }); 
 
     this.props.history.push(`/box/${response.data._id}`)
   
+  }
+  handleListarBox = (e) => {
+    this.props.history.push('/box/listar');
   }
 
   handleInputChange = (e) => {
@@ -45,6 +48,7 @@ export default class Main extends Component {
             <button type="submit">Criar</button>
            
            </form>
+           <button id="btn-listar" onClick={this.handleListarBox}>Lstar Boxes</button>
           
         </div>
 

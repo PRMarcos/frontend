@@ -20,8 +20,10 @@ export default class Box extends Component {
 
     const box = this.props.match.params.id;
     const response = await api.get(`boxes/${box}`);
+   
 
     this.setState({box:response.data}); 
+    //console.log(this.state.box.files);
   }
 
   SubscribeToNewFiles = () => {
@@ -53,8 +55,13 @@ export default class Box extends Component {
     return (
         <div id= "box-container">
         <header>
-            <img src={logo} alt=""/>
+            <a href="/box/listar">
+                <img src={logo} alt=""/>
+            </a>
+            
             <h1>{this.state.box.title}</h1>
+            
+            
         </header>
 
             <Dropzone onDropAccepted={this.handleUpload}>
@@ -70,7 +77,9 @@ export default class Box extends Component {
              </Dropzone>
 
             <ul>
+                
                 {this.state.box.files &&  this.state.box.files.map( file => (
+                    
                     <li key={file._id}>
                         <a className="fileInfo" href={file.url} target="blank">
 

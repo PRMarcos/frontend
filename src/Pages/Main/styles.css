@@ -1,20 +1,22 @@
-#main-container{
+#main-container,#btn-listar{
     height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 
 }
 
-#main-container form{
+#main-container form,#btn-listar{
     width: 300px;
     display: flex;
     flex-direction: column;
     
 }
 
-#main-container form input{
+#main-container form input,#btn-listar{
 
     height: 48px;
     border: 1 px solid #DDD;
@@ -25,7 +27,7 @@
     
 }
 
-#main-container form  button{
+#main-container form  button,#btn-listar{
 
     height: 48px;
     background: #7159c1;
@@ -42,6 +44,10 @@
 
 
 #main-container form  button:hover{
+    opacity: 0.8;
+}
+
+#btn-listar:hover{
     opacity: 0.8;
 }
 
